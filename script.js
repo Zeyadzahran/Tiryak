@@ -633,19 +633,65 @@ window.scrollToSection = function (sectionId) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // Initialize particle system with mobile optimization
     const canvas = document.getElementById('particleCanvas');
-    if (canvas) {
+    if (canvas && !isMobile) {
         new ParticleSystem(canvas);
+    } else if (canvas && isMobile) {
+        // Lighter particle system for mobile
+        const mobileParticles = new ParticleSystem(canvas);
+        mobileParticles.particles = mobileParticles.particles.slice(0, 30); // Reduce particle count
     }
 
+    // Initialize other components
     new MedicineDemo();
     new ScrollAnimations();
     new EnhancedNavigation();
     new FormHandler();
 
+    // Mobile-specific enhancements
+    if (isMobile) {
+        // Disable hover effects on mobile
+        document.body.classList.add('mobile-device');
+        
+        // Add touch event listeners for better mobile interaction
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.classList.add('touch-active');
+            });
+            
+            btn.addEventListener('touchend', () => {
+                setTimeout(() => btn.classList.remove('touch-active'), 150);
+            });
+        });
+
+        // Optimize scroll performance on mobile
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    // Add loading completion effect
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 500);
+
+    // Handle orientation changes on mobile
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            window.scrollTo(0, 0); // Reset scroll position
+        }, 100);
+    });
 });
 if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
