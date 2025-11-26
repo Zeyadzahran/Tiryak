@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiryak - Find Medicine Near You, Fast</title>
+    <meta name="description"
+        content="Tiryak connects patients with nearby pharmacies to check real-time availability. Find medicine fast with pickup or delivery options.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="#" class="logo">
+                        <img src="logo.jpg" alt="Tiryak" class="logo-img">
+                        <span class="logo-text">Tiryak</span>
+                    </a>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#for-pharmacies" class="nav-link">For Pharmacies</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="btn btn-primary btn-nav" onclick="scrollToSection('cta')">Get Early Access</button>
+                    <button class="nav-toggle" id="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <canvas id="particleCanvas"></canvas>
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-glass-card">
+                    <h1 class="hero-title">
+                        <span class="title-line">Find Medicine</span>
+                        <span class="title-line gradient-text">Near You, Fast.</span>
+                    </h1>
+                    <p class="hero-subtitle">Tiryak connects patients with nearby pharmacies to check real-time
+                        availability using advanced AI technology.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Service Available</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">
+                                < 5min</span>
+                                    <span class="stat-label">Average Response</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large btn-glow" onclick="scrollToSection('cta')">
+                            <span>Get Early Access</span>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn btn-secondary btn-large btn-glass" onclick="scrollToSection('how-it-works')">
+                            <span>How It Works</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="about">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Nearby Pharmacy Matching</h3>
+                    <p class="feature-description">Connect instantly with pharmacies in your area for immediate service.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Real-Time Medicine Availability</h3>
+                    <p class="feature-description">Check current stock levels before you travel to the pharmacy.</p>
+                </div>
+
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M16 11V7a4 4 0 0 0-8 0v4H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-3z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Pickup or Delivery Options</h3>
+                    <p class="feature-description">Choose the most convenient way to receive your medicine.</p>
+                </div>
+
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Faster Patient–Pharmacy Communication</h3>
+                    <p class="feature-description">Direct communication channels streamline the entire medicine request
+                        process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive-demo" id="demo">
+        <div class="container">
+            <h2 class="section-title">See Tiryak in Action</h2>
+            <div class="demo-container">
+                <div class="demo-phone">
+                    <div class="phone-screen">
+                        <div class="demo-app">
+                            <div class="app-header">
+                                <div class="search-bar">
+                                    <input type="text" placeholder="Search for medicine..." class="demo-search"
+                                        id="demoSearch">
+                                    <button class="search-btn">🔍</button>
+                                </div>
+                            </div>
+                            <div class="pharmacy-results" id="pharmacyResults">
+                                <div class="pharmacy-card">
+                                    <div class="pharmacy-info">
+                                        <h4>City Pharmacy</h4>
+                                        <p>0.3 km away • Available</p>
+                                    </div>
+                                    <div class="pharmacy-price">$12.99</div>
+                                </div>
+                                <div class="pharmacy-card">
+                                    <div class="pharmacy-info">
+                                        <h4>Health Plus</h4>
+                                        <p>0.7 km away • Available</p>
+                                    </div>
+                                    <div class="pharmacy-price">$11.50</div>
+                                </div>
+                                <div class="pharmacy-card">
+                                    <div class="pharmacy-info">
+                                        <h4>MediCare Center</h4>
+                                        <p>1.2 km away • Available</p>
+                                    </div>
+                                    <div class="pharmacy-price">$13.25</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-features">
+                    <div class="feature-highlight">
+                        <div class="highlight-icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>Get real-time availability from nearby pharmacies in seconds</p>
+                    </div>
+                    <div class="feature-highlight">
+                        <div class="highlight-icon">💊</div>
+                        <h3>Smart Matching</h3>
+                        <p>AI-powered system matches your exact medication needs</p>
+                    </div>
+                    <div class="feature-highlight">
+                        <div class="highlight-icon">🚀</div>
+                        <h3>Best Prices</h3>
+                        <p>Compare prices and choose the most affordable option</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step" data-animate>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">1. Search or Request Medicine</h3>
+                    <p class="step-description">Enter your medicine name or upload prescription details.</p>
+                </div>
+
+                <div class="step" data-animate>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">2. Pharmacies Respond Instantly</h3>
+                    <p class="step-description">Nearby pharmacies confirm availability and pricing immediately.</p>
+                </div>
+
+                <div class="step" data-animate>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4m-4 0V9a3 3 0 0 1 6 0v2m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">3. Choose Pickup or Delivery</h3>
+                    <p class="step-description">Select your preferred pharmacy and collection method.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="for-pharmacies" id="for-pharmacies">
+        <div class="container">
+            <div class="pharmacies-grid">
+                <div class="pharmacies-content" data-animate>
+                    <h2 class="section-title">Grow Your Pharmacy Reach.</h2>
+                    <ul class="benefits-list">
+                        <li>Receive medicine requests instantly</li>
+                        <li>Increase sales</li>
+                        <li>Improve service quality</li>
+                    </ul>
+                </div>
+                <div class="pharmacies-visual" data-animate>
+                    <div class="mock-interface">
+                        <div class="mock-header"></div>
+                        <div class="mock-content">
+                            <div class="mock-item"></div>
+                            <div class="mock-item"></div>
+                            <div class="mock-item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content" data-animate>
+                <h2 class="cta-title">Become an Early Partner.</h2>
+                <p class="cta-subtitle">Join Tiryak today.</p>
+                <button class="btn btn-primary btn-large">Get Early Access</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">
+                        <img src="logo.jpg" alt="Tiryak" class="logo-img">
+                        <span class="logo-text">Tiryak</span>
+                    </a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:tiryak04@gmail.com" class="contact-email">tiryak04@gmail.com</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Tiryak</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
